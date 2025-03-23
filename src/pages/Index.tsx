@@ -20,6 +20,13 @@ const Index = () => {
             transition={{ duration: 0.6 }}
             className="mb-6"
           >
+            <div className="flex justify-center mb-6">
+              <img 
+                src="/lovable-uploads/676c58ad-1642-48e0-8b17-24b9c18d22c4.png" 
+                alt="Abby Logo" 
+                className="h-24 w-auto mb-4" 
+              />
+            </div>
             <span className="px-4 py-2 rounded-full bg-abby-100 text-abby-700 text-sm font-medium inline-block mb-6">
               Private • Supportive • Informative
             </span>
@@ -37,7 +44,7 @@ const Index = () => {
             transition={{ delay: 0.3, duration: 0.6 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <Button asChild size="lg" className="rounded-full px-8 text-base shadow-soft">
+            <Button asChild size="lg" className="rounded-full px-8 text-base shadow-soft bg-abby-600 hover:bg-abby-600/90">
               <Link to="/chat">
                 Chat with Abby <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
@@ -64,17 +71,17 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-10">
             {[
               {
-                icon: <ShieldCheck className="h-10 w-10 text-abby-500" />,
+                icon: <ShieldCheck className="h-10 w-10 text-abby-600" />,
                 title: "Data Privacy",
                 description: "Your data privacy is our top priority. All conversations are completely confidential.",
               },
               {
-                icon: <Heart className="h-10 w-10 text-abby-500" />,
+                icon: <Heart className="h-10 w-10 text-abby-600" />,
                 title: "Compassionate Care",
                 description: "Receive caring, judgment-free support when you need it most.",
               },
               {
-                icon: <FileText className="h-10 w-10 text-abby-500" />,
+                icon: <FileText className="h-10 w-10 text-abby-600" />,
                 title: "Reliable Information",
                 description: "Access accurate, up-to-date information about reproductive healthcare and legal policies in your state.",
               },
@@ -129,7 +136,7 @@ const Index = () => {
                 className="relative bg-white rounded-2xl p-8 border border-slate-100 shadow-soft z-10"
               >
                 <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 rounded-full bg-abby-500 text-white flex items-center justify-center font-bold text-lg">
+                  <div className="w-12 h-12 rounded-full bg-abby-600 text-white flex items-center justify-center font-bold text-lg">
                     {step.number}
                   </div>
                   <div className="h-0.5 flex-grow bg-abby-200 ml-4 md:hidden"></div>
@@ -141,7 +148,7 @@ const Index = () => {
           </div>
           
           <div className="text-center mt-12">
-            <Button asChild size="lg" className="rounded-full px-8 text-base shadow-soft">
+            <Button asChild size="lg" className="rounded-full px-8 text-base shadow-soft bg-abby-600 hover:bg-abby-600/90">
               <Link to="/chat">
                 Start Now <ArrowRight className="ml-2 h-4 w-4" />
               </Link>

@@ -46,8 +46,13 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link 
           to="/" 
-          className="font-serif text-xl font-medium text-black"
+          className="font-serif text-xl font-medium text-black flex items-center gap-2"
         >
+          <img 
+            src="/lovable-uploads/676c58ad-1642-48e0-8b17-24b9c18d22c4.png" 
+            alt="Abby Logo" 
+            className="h-8 w-auto" 
+          />
           Abby
         </Link>
         
@@ -70,7 +75,7 @@ const Navigation = () => {
           </div>
           
           <Button asChild 
-            className="rounded-full font-medium bg-abby-600 text-white hover:bg-abby-700"
+            className="rounded-full font-medium bg-abby-600 text-white hover:bg-abby-600/90"
             size="sm"
           >
             <Link to="/chat">
@@ -122,7 +127,7 @@ const Navigation = () => {
             </Link>
           ))}
           <Button asChild 
-            className="rounded-full font-medium bg-abby-600 text-white hover:bg-abby-700 w-full"
+            className="rounded-full font-medium bg-abby-600 text-white hover:bg-abby-600/90 w-full"
           >
             <Link to="/chat">
               Get Started

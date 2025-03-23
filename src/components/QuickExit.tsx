@@ -24,15 +24,16 @@ export const QuickExit = () => {
   }, []);
 
   return (
-    <div className={`fixed top-4 right-4 z-50 transition-all duration-300 ${isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+    <div className="fixed top-0 left-0 w-full z-50 bg-black text-white px-4 py-2 flex justify-between items-center">
+      <div className="text-sm">Press ESC or click the button to quickly leave this page.</div>
       <Button 
         variant="destructive" 
         size="sm"
-        className="rounded-full gap-1 items-center shadow-soft hover:shadow-md transition-all duration-300 hover:scale-105"
+        className="rounded-md bg-red-500 hover:bg-red-600 flex items-center gap-1"
         onClick={handleExit}
       >
-        <X size={16} />
-        <span>Quick Exit</span>
+        <X size={14} />
+        <span>Exit Now</span>
       </Button>
     </div>
   );

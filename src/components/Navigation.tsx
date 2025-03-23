@@ -12,9 +12,9 @@ const Navigation = () => {
 
   const routes = [
     { name: 'Home', path: '/' },
-    { name: 'Chat', path: '/chat' },
     { name: 'About', path: '/about' },
     { name: 'FAQ', path: '/faq' },
+    { name: 'Resources', path: '/chat' },
     { name: 'Privacy', path: '/privacy' },
   ];
 
@@ -38,36 +38,44 @@ const Navigation = () => {
   return (
     <nav 
       className={cn(
-        "fixed top-0 left-0 w-full z-40 transition-all duration-300 px-6 py-4",
-        scrolled ? "bg-white/80 backdrop-blur-lg shadow-sm" : "bg-transparent"
+        "fixed top-0 left-0 w-full z-40 transition-all duration-300 px-6 py-4 border-b",
+        scrolled ? "bg-white shadow-sm" : "bg-white"
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link 
           to="/" 
-          className="flex items-center gap-2 font-display text-xl font-semibold text-abby-700"
+          className="font-serif text-xl font-medium text-black"
         >
-          <div className="w-8 h-8 rounded-full bg-abby-100 flex items-center justify-center text-abby-600 overflow-hidden">
-            <span className="animate-fade-in">A</span>
-          </div>
-          <span className="animate-fade-in">Abby</span>
+          Home
         </Link>
         
-        <div className="hidden md:flex items-center space-x-1">
-          {routes.map((route) => (
-            <Link
-              key={route.path}
-              to={route.path}
-              className={cn(
-                "px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-200",
-                location.pathname === route.path
-                  ? "text-abby-700 bg-abby-50"
-                  : "text-slate-600 hover:text-abby-700 hover:bg-abby-50/50"
-              )}
-            >
-              {route.name}
+        <div className="hidden md:flex items-center space-x-8">
+          <div className="flex items-center space-x-8">
+            {routes.slice(1, 4).map((route) => (
+              <Link
+                key={route.path}
+                to={route.path}
+                className={cn(
+                  "text-sm font-medium transition-colors duration-200",
+                  location.pathname === route.path
+                    ? "text-black"
+                    : "text-slate-600 hover:text-black"
+                )}
+              >
+                {route.name}
+              </Link>
+            ))}
+          </div>
+          
+          <Button asChild 
+            className="rounded-full font-medium bg-black text-white hover:bg-black/90"
+            size="sm"
+          >
+            <Link to="/chat">
+              Get Started
             </Link>
-          ))}
+          </Button>
         </div>
 
         <Button
@@ -83,7 +91,7 @@ const Navigation = () => {
       {/* Mobile menu */}
       <div
         className={cn(
-          "fixed inset-0 z-50 bg-white/95 backdrop-blur-sm md:hidden flex flex-col justify-center transition-all duration-300 ease-in-out",
+          "fixed inset-0 z-50 bg-white md:hidden flex flex-col justify-center transition-all duration-300 ease-in-out",
           isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         )}
       >
@@ -101,16 +109,23 @@ const Navigation = () => {
               key={route.path}
               to={route.path}
               className={cn(
-                "px-5 py-3 text-lg font-medium transition-colors duration-200 rounded-xl w-full text-center",
+                "px-5 py-3 text-lg font-medium transition-colors duration-200 w-full text-center",
                 location.pathname === route.path
-                  ? "text-abby-700 bg-abby-50"
-                  : "text-slate-600 hover:text-abby-700 hover:bg-abby-50/50"
+                  ? "text-black"
+                  : "text-slate-600 hover:text-black"
               )}
               onClick={() => setIsOpen(false)}
             >
               {route.name}
             </Link>
           ))}
+          <Button asChild 
+            className="rounded-full font-medium bg-black text-white hover:bg-black/90 w-full"
+          >
+            <Link to="/chat">
+              Get Started
+            </Link>
+          </Button>
         </div>
       </div>
     </nav>

@@ -41,26 +41,27 @@ const Navigation = () => {
         "fixed top-0 left-0 w-full z-40 transition-all duration-300 px-6 py-4 border-b",
         scrolled ? "bg-white shadow-sm" : "bg-white"
       )}
+      style={{ marginTop: '36px' }} // Add space for QuickExit
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link 
           to="/" 
           className="font-serif text-xl font-medium text-black"
         >
-          Home
+          Abby
         </Link>
         
         <div className="hidden md:flex items-center space-x-8">
           <div className="flex items-center space-x-8">
-            {routes.slice(1, 4).map((route) => (
+            {routes.slice(1).map((route) => (
               <Link
                 key={route.path}
                 to={route.path}
                 className={cn(
                   "text-sm font-medium transition-colors duration-200",
                   location.pathname === route.path
-                    ? "text-black"
-                    : "text-slate-600 hover:text-black"
+                    ? "text-abby-600"
+                    : "text-slate-600 hover:text-abby-600"
                 )}
               >
                 {route.name}
@@ -69,7 +70,7 @@ const Navigation = () => {
           </div>
           
           <Button asChild 
-            className="rounded-full font-medium bg-black text-white hover:bg-black/90"
+            className="rounded-full font-medium bg-abby-600 text-white hover:bg-abby-700"
             size="sm"
           >
             <Link to="/chat">
@@ -94,6 +95,7 @@ const Navigation = () => {
           "fixed inset-0 z-50 bg-white md:hidden flex flex-col justify-center transition-all duration-300 ease-in-out",
           isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         )}
+        style={{ top: '36px' }} // Account for QuickExit
       >
         <Button
           variant="ghost"
@@ -111,8 +113,8 @@ const Navigation = () => {
               className={cn(
                 "px-5 py-3 text-lg font-medium transition-colors duration-200 w-full text-center",
                 location.pathname === route.path
-                  ? "text-black"
-                  : "text-slate-600 hover:text-black"
+                  ? "text-abby-600"
+                  : "text-slate-600 hover:text-abby-600"
               )}
               onClick={() => setIsOpen(false)}
             >
@@ -120,7 +122,7 @@ const Navigation = () => {
             </Link>
           ))}
           <Button asChild 
-            className="rounded-full font-medium bg-black text-white hover:bg-black/90 w-full"
+            className="rounded-full font-medium bg-abby-600 text-white hover:bg-abby-700 w-full"
           >
             <Link to="/chat">
               Get Started

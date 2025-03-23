@@ -23,6 +23,18 @@ export const QuickExit = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    // Add ESC key event listener for quick exit
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        handleExit();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
   return (
     <div className="fixed top-0 left-0 w-full z-50 bg-black text-white px-4 py-2 flex justify-between items-center">
       <div className="text-sm">Press ESC or click the button to quickly leave this page.</div>

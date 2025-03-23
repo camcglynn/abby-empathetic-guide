@@ -19,7 +19,7 @@ const Layout = ({ children }: LayoutProps) => {
     <div className="min-h-screen flex flex-col">
       <QuickExit />
       <Navigation />
-      <main className="flex-grow pt-20 animate-fade-in">
+      <main className="flex-grow pt-32 animate-fade-in">
         {children}
       </main>
       <footer className="bg-slate-50 border-t border-slate-100 py-6 px-6">

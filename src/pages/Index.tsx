@@ -5,6 +5,9 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 const Index = () => {
+  // Get the base URL from the import.meta object to handle both development and production
+  const baseUrl = import.meta.env.BASE_URL;
+  
   return (
     <div className="flex flex-col w-full">
       {/* Hero Section */}
@@ -22,7 +25,7 @@ const Index = () => {
           >
             <div className="flex justify-center mb-6">
               <img 
-                src="/lovable-uploads/676c58ad-1642-48e0-8b17-24b9c18d22c4.png" 
+                src={`${baseUrl}lovable-uploads/676c58ad-1642-48e0-8b17-24b9c18d22c4.png`} 
                 alt="Abby Logo" 
                 className="h-24 w-auto mb-4" 
               />

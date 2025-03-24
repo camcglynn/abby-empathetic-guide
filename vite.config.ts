@@ -6,7 +6,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: mode === 'production' ? '/camcglynn/abby-empathetic-guide/' : '/',
+  base: mode === 'production' ? '/abby-empathetic-guide/' : '/',
   server: {
     host: "::",
     port: 8080,

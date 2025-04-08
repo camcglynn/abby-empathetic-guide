@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import Layout from "./components/Layout";
+import DebugInfo from "./components/DebugInfo";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Chat from "./pages/Chat";
@@ -36,6 +37,7 @@ const App = () => {
               </Routes>
             </AnimatePresence>
           </Layout>
+          <DebugInfo />
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>

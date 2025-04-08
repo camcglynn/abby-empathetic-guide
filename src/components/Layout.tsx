@@ -13,10 +13,14 @@ const Layout = ({ children }: LayoutProps) => {
   
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Debug rendering issues
+    console.log('Layout rendered with path:', pathname);
+    document.body.classList.add('debug-render');
   }, [pathname]);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-background">
       <QuickExit />
       <Navigation />
       <main className="flex-grow pt-32 animate-fade-in">

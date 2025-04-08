@@ -1,8 +1,75 @@
 
-import { ArrowRight, ShieldCheck, Heart, FileText } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Heart, FileText, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+
+const ChatAnimation = () => {
+  const [messages, setMessages] = useState<string[]>([]);
+  const demoMessages = [
+    "How much does abortion cost?",
+    "It varies by location and type. I can help you find specific information for your area.",
+    "What are my options?",
+    "You have several options including medication abortion and in-clinic procedures. Let me explain each one...",
+    "Is it safe?",
+    "Yes, when performed by qualified providers, abortion is very safe. I can share more details if you'd like."
+  ];
+
+  useEffect(() => {
+    const addMessage = (index: number) => {
+      if (index < demoMessages.length) {
+        setMessages(prev => [...prev, demoMessages[index]]);
+        setTimeout(() => addMessage(index + 1), 1500);
+      } else {
+        // Reset animation after a pause
+        setTimeout(() => {
+          setMessages([]);
+          setTimeout(() => addMessage(0), 1000);
+        }, 3000);
+      }
+    };
+
+    // Start the animation
+    setTimeout(() => addMessage(0), 1000);
+
+    return () => {
+      // Clean up all timeouts
+      const highestId = window.setTimeout(() => {}, 0);
+      for (let i = 0; i < highestId; i++) {
+        clearTimeout(i);
+      }
+    };
+  }, []);
+
+  return (
+    <div className="bg-white rounded-xl shadow-soft border border-slate-100 w-full max-w-[350px] h-[400px] overflow-hidden flex flex-col">
+      <div className="bg-abby-600 text-white p-3 flex items-center">
+        <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center mr-2">
+          <MessageSquare className="h-4 w-4" />
+        </div>
+        <div>Chat with Abby</div>
+      </div>
+      <div className="flex-1 p-4 overflow-y-auto flex flex-col space-y-2">
+        {messages.map((message, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+            className={`max-w-[80%] p-3 rounded-2xl ${
+              index % 2 === 0
+                ? 'bg-slate-100 self-end rounded-tr-none'
+                : 'bg-abby-100 text-abby-800 self-start rounded-tl-none'
+            }`}
+          >
+            {message}
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const Index = () => {
   // Get the base URL from the import.meta object to handle both development and production
@@ -16,46 +83,57 @@ const Index = () => {
         <div className="absolute -top-40 -right-40 w-96 h-96 bg-abby-200 rounded-full opacity-20 blur-3xl"></div>
         <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-abby-100 rounded-full opacity-30 blur-3xl"></div>
         
-        <div className="max-w-5xl mx-auto relative z-10 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="mb-6"
-          >
-            <div className="flex justify-center mb-6">
-              <img 
-                src={`${baseUrl}lovable-uploads/676c58ad-1642-48e0-8b17-24b9c18d22c4.png`} 
-                alt="Abby Logo" 
-                className="h-24 w-auto mb-4" 
-              />
-            </div>
-            <span className="px-4 py-2 rounded-full bg-abby-100 text-abby-700 text-sm font-medium inline-block mb-6">
-              Private • Supportive • Informative
-            </span>
-            <h1 className="text-4xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight">
-              Meet <span className="text-abby-600">Abby</span>, your personal guide to reproductive health
-            </h1>
-            <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-8">
-              Private, judgment-free information about abortion and reproductive health, with emotional support along your journey.
-            </p>
-          </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-          >
-            <Button asChild size="lg" className="rounded-full px-8 text-base shadow-soft bg-abby-600 hover:bg-abby-600/90">
-              <Link to="/chat">
-                Chat with Abby <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="rounded-full px-8 text-base border-slate-200">
-              <Link to="/about">Learn More</Link>
-            </Button>
-          </motion.div>
+        <div className="max-w-6xl mx-auto relative z-10 w-full">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="mb-6 md:mb-0 md:flex-1"
+            >
+              <div className="flex justify-center md:justify-start mb-6">
+                <img 
+                  src={`${baseUrl}lovable-uploads/676c58ad-1642-48e0-8b17-24b9c18d22c4.png`} 
+                  alt="Abby Logo" 
+                  className="h-24 w-auto mb-4" 
+                />
+              </div>
+              <span className="px-4 py-2 rounded-full bg-abby-100 text-abby-700 text-sm font-medium inline-block mb-6">
+                Private • Supportive • Informative
+              </span>
+              <h1 className="text-4xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight">
+                Meet <span className="text-abby-600">Abby</span>, your personal guide to reproductive health
+              </h1>
+              <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto md:mx-0 mb-8">
+                Private, judgment-free information about abortion and reproductive health, with emotional support along your journey.
+              </p>
+              
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.3, duration: 0.6 }}
+                className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
+              >
+                <Button asChild size="lg" className="rounded-full px-8 text-base shadow-soft bg-abby-600 hover:bg-abby-600/90">
+                  <Link to="/chat">
+                    Chat with Abby <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" size="lg" className="rounded-full px-8 text-base border-slate-200">
+                  <Link to="/about">Learn More</Link>
+                </Button>
+              </motion.div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.5, duration: 0.6 }}
+              className="md:flex-1 flex justify-center md:justify-end"
+            >
+              <ChatAnimation />
+            </motion.div>
+          </div>
         </div>
       </section>
 

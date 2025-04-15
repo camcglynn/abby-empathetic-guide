@@ -12,8 +12,12 @@ const About = () => {
       name: 'Nicole McNabb',
       role: 'Senior Data Scientist',
       bio: 'Nicole is a professional Data Scientist with prior experience developing and deploying chatbot tools for client use. As programming lead on the project, Nicole refined Abby\'s model to ensure a high-degree of data privacy and informational accuracy for users.',
+    },
+    {
+      name: 'Chloe McGlynn',
+      role: 'Public Health Research Analyst',
+      bio: 'Chloe is a Research Analyst with experience supporting federal adolescent pregnancy prevention initiatives and conducting statistical analyses of public health program outcomes for US citizens. Her background in health policy research, technical writing, and Machine Learning allowed her to support each step of Abby\'s design and implementation.',
     }
-    // Removed Nadya's information
   ];
 
   return (

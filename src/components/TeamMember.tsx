@@ -14,7 +14,7 @@ const TeamMember = ({ name, role, bio, index }: TeamMemberProps) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.1 * index, duration: 0.5 }}
-      className="bg-white rounded-2xl p-8 border border-slate-100 shadow-soft"
+      className="bg-white rounded-2xl p-8 border border-slate-100 shadow-soft text-left"
     >
       <div className="flex items-center mb-4">
         <div className="w-12 h-12 rounded-full bg-abby-100 flex items-center justify-center text-abby-700 text-lg font-medium">

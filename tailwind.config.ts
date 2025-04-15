@@ -162,9 +162,17 @@ export default {
         'soft-all': 'all 300ms ease-in-out'
       },
       ringColor: {
-        'abby': '#87A078' // Changed to medium sage
+        abby: {
+          DEFAULT: '#87A078',
+          500: '#87A078' // Added this specifically for the ring-abby-500 class
+        }
       }
     }
   },
+  safelist: [
+    'ring-abby-500/30', // Add this class to the safelist to ensure it's generated
+  ],
+  plugins: [require("tailwindcss-animate")],
+} satisfies Config;
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;

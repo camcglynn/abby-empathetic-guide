@@ -88,14 +88,14 @@ const Privacy = () => {
   return (
     <div className="pt-12 pb-24 px-6">
       <div className="max-w-4xl mx-auto">
-        <div className="mb-16 text-center">
+        <div className="mb-16 text-left">
           <span className="px-4 py-2 rounded-full bg-abby-100 text-abby-700 text-sm font-medium inline-block mb-4">
             Privacy Policy
           </span>
-          <h1 className="text-4xl font-bold text-slate-900 mb-6">
+          <h1 className="text-4xl font-bold text-slate-900 mb-6 text-left">
             Your Privacy Is Our Priority
           </h1>
-          <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+          <p className="text-lg text-slate-600 max-w-3xl mx-auto text-left">
             Learn how we protect your data and ensure your conversations remain private and secure.
           </p>
         </div>
@@ -103,11 +103,11 @@ const Privacy = () => {
         <div className="bg-white rounded-2xl p-8 border border-slate-100 shadow-soft mb-16">
           {sections.map((section, sIndex) => (
             <div key={sIndex} className={`mb-8 ${sIndex !== 0 ? 'pt-6 border-t border-slate-100' : ''}`}>
-              <h2 className="text-xl font-bold text-slate-900 mb-4">{section.title}</h2>
+              <h2 className="text-xl font-bold text-slate-900 mb-4 text-left">{section.title}</h2>
               {typeof section.content === 'string' ? (
-                <p className="text-slate-600">{section.content}</p>
+                <p className="text-slate-600 text-left">{section.content}</p>
               ) : (
-                <ul className="text-slate-600 space-y-2 list-disc pl-5">
+                <ul className="text-slate-600 space-y-2 list-disc pl-5 text-left">
                   {section.content.map((item, iIndex) => (
                     <li key={iIndex}>{item}</li>
                   ))}
@@ -118,13 +118,13 @@ const Privacy = () => {
         </div>
 
         <div className="text-center bg-abby-50 rounded-2xl p-8 border border-abby-100">
-          <h2 className="text-xl font-bold text-slate-900 mb-4">
+          <h2 className="text-xl font-bold text-slate-900 mb-4 text-left">
             Have questions about our privacy policy?
           </h2>
-          <p className="text-slate-600 mb-6">
+          <p className="text-slate-600 mb-6 text-left">
             If you have any questions or concerns about how we handle your data, please contact us.
           </p>
-          <div className="inline-block px-5 py-3 bg-white rounded-xl shadow-sm border border-slate-100 text-slate-600">
+          <div className="inline-block px-5 py-3 bg-white rounded-xl shadow-sm border border-slate-100 text-slate-600 text-left">
             contact@abbychatbot.org
           </div>
         </div>

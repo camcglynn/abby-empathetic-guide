@@ -124,6 +124,10 @@ const Index = () => {
                 </Button>
               </motion.div>
             </motion.div>
+            
+            <div className="md:flex-1 flex justify-center md:justify-end">
+              <ChatAnimation />
+            </div>
           </div>
         </div>
       </section>

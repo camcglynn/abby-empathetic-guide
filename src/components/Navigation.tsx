@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
@@ -10,12 +9,9 @@ const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   
-  // Get the base URL for GitHub Pages deployment
   const baseUrl = import.meta.env.BASE_URL || '/';
 
-  // Create a function to handle path generation
   const getAssetPath = (path: string) => {
-    // Remove leading slash if present to avoid double slashes
     const cleanPath = path.startsWith('/') ? path.substring(1) : path;
     return `${baseUrl}${cleanPath}`;
   };
@@ -44,7 +40,6 @@ const Navigation = () => {
     setIsOpen(false);
   }, [location.pathname]);
 
-  // Log the base URL and image path for debugging
   console.log('Base URL:', baseUrl);
   console.log('Image path:', getAssetPath('lovable-uploads/2d537a2a-eaed-4586-97e0-9a563f78d1e8.png'));
 
@@ -61,16 +56,6 @@ const Navigation = () => {
           to="/" 
           className="font-serif text-xl font-medium text-black flex items-center gap-2"
         >
-          <img 
-            src={getAssetPath('lovable-uploads/2d537a2a-eaed-4586-97e0-9a563f78d1e8.png')} 
-            alt="Abby Logo" 
-            className="h-8 w-auto" 
-            onError={(e) => {
-              console.error('Image failed to load:', e);
-              // Fallback to text-only if image fails to load
-              e.currentTarget.style.display = 'none';
-            }}
-          />
           Abby
         </Link>
         

@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
@@ -54,11 +53,6 @@ const Navigation = () => {
           to="/" 
           className="font-serif text-xl font-medium text-black flex items-center gap-2"
         >
-          <img 
-            src={getAssetPath('lovable-uploads/b0b7e8e4-a927-4d73-96e5-e52e6f6fa413.png')} 
-            alt="Abby Logo" 
-            className="h-8 w-8"
-          />
           Abby
         </Link>
         

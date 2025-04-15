@@ -1,4 +1,3 @@
-
 import { ArrowRight, ShieldCheck, Heart, FileText, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
@@ -103,14 +102,7 @@ const Index = () => {
                 Private • Supportive • Informative
               </span>
               <h1 className="text-4xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight">
-                Meet <span className="text-abby-600 flex items-center justify-center md:justify-start gap-3 inline-flex">
-                  <img 
-                    src={getAssetPath('lovable-uploads/b0b7e8e4-a927-4d73-96e5-e52e6f6fa413.png')} 
-                    alt="Abby Logo" 
-                    className="h-12 w-12 inline"
-                  />
-                  Abby
-                </span>, your personal guide to reproductive health
+                Meet <span className="text-abby-600">Abby</span>, your personal guide to reproductive health
               </h1>
               <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto md:mx-0 mb-8">
                 Private, judgment-free information about abortion and reproductive health, with emotional support along your journey.
@@ -131,15 +123,6 @@ const Index = () => {
                   <a href="/about">Learn More</a>
                 </Button>
               </motion.div>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.5, duration: 0.6 }}
-              className="md:flex-1 flex justify-center md:justify-end"
-            >
-              <ChatAnimation />
             </motion.div>
           </div>
         </div>

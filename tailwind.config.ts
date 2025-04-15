@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -28,7 +27,10 @@ export default {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
-				background: 'hsl(var(--background))',
+				background: {
+					DEFAULT: '#F4F3F1',
+					foreground: '#000000'
+				},
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
@@ -59,17 +61,17 @@ export default {
 					foreground: 'hsl(var(--card-foreground))'
 				},
 				abby: {
-					50: '#f0f9ff',
-					100: '#e0f2fe',
-					200: '#b9e6fe',
-					300: '#7cd4fd',
-					400: '#36bffa',
-					500: '#0ca5e9',
-					600: '#10abb5', // Updated to the provided color
-					700: '#0283c7',
-					800: '#065986',
-					900: '#0b4a6f',
-					950: '#082f49',
+					50: '#F4F3F1',
+					100: '#E6E5E2',
+					200: '#A1A79E',
+					300: '#A1A79E',
+					400: '#A1A79E',
+					500: '#A1A79E',
+					600: '#A1A79E',
+					700: '#8C9289',
+					800: '#737970',
+					900: '#5A5F57',
+					950: '#3E4240'
 				},
 				slate: {
 					50: '#f8fafc',

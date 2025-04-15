@@ -85,7 +85,7 @@ const Index = () => {
   
   return (
     <div className="flex flex-col w-full">
-      <section className="min-h-[90vh] flex items-center justify-center px-6 py-20 relative overflow-hidden">
+      <section className="min-h-[80vh] flex items-center justify-center px-6 py-12 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-abby-50/50 to-white pointer-events-none"></div>
         <div className="absolute -top-40 -right-40 w-96 h-96 bg-abby-200 rounded-full opacity-20 blur-3xl"></div>
         <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-abby-100 rounded-full opacity-30 blur-3xl"></div>
@@ -132,9 +132,9 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-24 px-6 bg-white">
+      <section className="py-16 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
+          <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
               How Abby Can Help You
             </h2>
@@ -143,7 +143,7 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-10">
+          <div className="grid md:grid-cols-3 gap-8">
             {[
               {
                 icon: <ShieldCheck className="h-10 w-10 text-abby-600" />,
@@ -176,9 +176,9 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-24 px-6 bg-slate-50">
+      <section className="py-16 px-6 bg-slate-50">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
               Simple Steps to Get Support
             </h2>
@@ -220,7 +220,7 @@ const Index = () => {
             ))}
           </div>
           
-          <div className="text-center mt-12">
+          <div className="text-center mt-8">
             <Button asChild size="lg" className="rounded-full px-8 text-base shadow-soft bg-abby-600 hover:bg-abby-600/90">
               <a href="http://abby-alb-1572042320.us-east-2.elb.amazonaws.com/" target="_blank" rel="noopener noreferrer">
                 Start Now <ArrowRight className="ml-2 h-4 w-4" />

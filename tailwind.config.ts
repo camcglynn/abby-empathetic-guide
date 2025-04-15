@@ -95,6 +95,13 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				textColor: {
+					'abby': {
+						'primary': '#000000',
+						'secondary': '#5A5F57',
+						'muted': '#737970'
+					}
 				}
 			},
 			borderRadius: {
@@ -146,10 +153,18 @@ export default {
 			},
 			boxShadow: {
 				'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)',
-				'glow': '0 0 20px rgba(12, 165, 233, 0.15)'
+				'glow': '0 0 20px rgba(12, 165, 233, 0.15)',
+				'soft-light': '0 2px 10px rgba(161, 167, 158, 0.1)',
+				'soft-medium': '0 4px 15px rgba(161, 167, 158, 0.15)',
 			},
 			backdropBlur: {
 				xs: '2px',
+			},
+			transitionProperty: {
+				'soft-all': 'all 300ms ease-in-out'
+			},
+			ringColor: {
+				'abby': '#A1A79E'
 			}
 		}
 	},

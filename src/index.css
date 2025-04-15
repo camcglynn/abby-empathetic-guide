@@ -55,7 +55,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-abby-primary font-sans antialiased;
     background-color: #F4F3F1;
     color: #000000;
     -webkit-font-smoothing: antialiased;
@@ -67,8 +67,12 @@
     @apply transition-all duration-500 ease-in-out;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-serif;
+  h1, h2, h3 {
+    @apply text-abby-primary font-serif;
+  }
+
+  p {
+    @apply text-abby-secondary;
   }
 
   /* Glass effect */
@@ -107,5 +111,22 @@
   }
   .page-exit-active {
     @apply opacity-0 transition-opacity duration-300;
+  }
+
+  // Soft focus and interaction states
+  *:focus {
+    @apply outline-none ring-2 ring-abby-500/30 transition-all duration-300;
+  }
+}
+
+@layer utilities {
+  // Soft card and container styles
+  .soft-card {
+    @apply bg-white/70 backdrop-blur-sm border border-abby-100/50 rounded-xl shadow-soft-light hover:shadow-soft-medium transition-soft-all;
+  }
+
+  // Gentle hover effects
+  .hover-lift {
+    @apply transition-soft-all hover:-translate-y-1 hover:shadow-soft-medium;
   }
 }

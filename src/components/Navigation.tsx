@@ -16,7 +16,6 @@ const Navigation = () => {
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
     { name: 'FAQ', path: '/faq' },
-    { name: 'Resources', path: '/chat' },
     { name: 'Privacy', path: '/privacy' },
   ];
 
@@ -51,7 +50,7 @@ const Navigation = () => {
           className="font-serif text-xl font-medium text-black flex items-center gap-2"
         >
           <img 
-            src={`${baseUrl}lovable-uploads/676c58ad-1642-48e0-8b17-24b9c18d22c4.png`} 
+            src={`${baseUrl}lovable-uploads/5c7322c8-233e-4943-9631-e58ba8ebc4be.png`} 
             alt="Abby Logo" 
             className="h-8 w-auto" 
           />
@@ -80,9 +79,9 @@ const Navigation = () => {
             className="rounded-full font-medium bg-abby-600 text-white hover:bg-abby-600/90"
             size="sm"
           >
-            <Link to="/chat">
+            <a href="http://abby-alb-1572042320.us-east-2.elb.amazonaws.com/" target="_blank" rel="noopener noreferrer">
               Get Started
-            </Link>
+            </a>
           </Button>
         </div>
 
@@ -131,9 +130,9 @@ const Navigation = () => {
           <Button asChild 
             className="rounded-full font-medium bg-abby-600 text-white hover:bg-abby-600/90 w-full"
           >
-            <Link to="/chat">
+            <a href="http://abby-alb-1572042320.us-east-2.elb.amazonaws.com/" target="_blank" rel="noopener noreferrer">
               Get Started
-            </Link>
+            </a>
           </Button>
         </div>
       </div>

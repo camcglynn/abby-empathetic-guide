@@ -2,7 +2,6 @@
 import { ArrowRight, ShieldCheck, Heart, FileText, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 const ChatAnimation = () => {
@@ -43,31 +42,38 @@ const ChatAnimation = () => {
   }, []);
 
   return (
-    <div className="bg-white rounded-xl shadow-soft border border-slate-100 w-full max-w-[350px] h-[400px] overflow-hidden flex flex-col">
-      <div className="bg-abby-600 text-white p-3 flex items-center">
-        <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center mr-2">
-          <MessageSquare className="h-4 w-4" />
+    <a 
+      href="http://abby-alb-1572042320.us-east-2.elb.amazonaws.com/" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="block w-full max-w-[350px]"
+    >
+      <div className="bg-white rounded-xl shadow-soft border border-slate-100 w-full h-[400px] overflow-hidden flex flex-col transition-all duration-300 hover:shadow-glow hover:-translate-y-1">
+        <div className="bg-abby-600 text-white p-3 flex items-center">
+          <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center mr-2">
+            <MessageSquare className="h-4 w-4" />
+          </div>
+          <div>Chat with Abby</div>
         </div>
-        <div>Chat with Abby</div>
+        <div className="flex-1 p-4 overflow-y-auto flex flex-col space-y-2">
+          {messages.map((message, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3 }}
+              className={`max-w-[80%] p-3 rounded-2xl ${
+                index % 2 === 0
+                  ? 'bg-slate-100 self-end rounded-tr-none'
+                  : 'bg-abby-100 text-abby-800 self-start rounded-tl-none'
+              }`}
+            >
+              {message}
+            </motion.div>
+          ))}
+        </div>
       </div>
-      <div className="flex-1 p-4 overflow-y-auto flex flex-col space-y-2">
-        {messages.map((message, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
-            className={`max-w-[80%] p-3 rounded-2xl ${
-              index % 2 === 0
-                ? 'bg-slate-100 self-end rounded-tr-none'
-                : 'bg-abby-100 text-abby-800 self-start rounded-tl-none'
-            }`}
-          >
-            {message}
-          </motion.div>
-        ))}
-      </div>
-    </div>
+    </a>
   );
 };
 
@@ -93,7 +99,7 @@ const Index = () => {
             >
               <div className="flex justify-center md:justify-start mb-6">
                 <img 
-                  src={`${baseUrl}lovable-uploads/676c58ad-1642-48e0-8b17-24b9c18d22c4.png`} 
+                  src={`${baseUrl}lovable-uploads/5c7322c8-233e-4943-9631-e58ba8ebc4be.png`} 
                   alt="Abby Logo" 
                   className="h-24 w-auto mb-4" 
                 />
@@ -115,12 +121,12 @@ const Index = () => {
                 className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
               >
                 <Button asChild size="lg" className="rounded-full px-8 text-base shadow-soft bg-abby-600 hover:bg-abby-600/90">
-                  <Link to="/chat">
+                  <a href="http://abby-alb-1572042320.us-east-2.elb.amazonaws.com/" target="_blank" rel="noopener noreferrer">
                     Chat with Abby <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
+                  </a>
                 </Button>
                 <Button asChild variant="outline" size="lg" className="rounded-full px-8 text-base border-slate-200">
-                  <Link to="/about">Learn More</Link>
+                  <a href="/about">Learn More</a>
                 </Button>
               </motion.div>
             </motion.div>
@@ -230,9 +236,9 @@ const Index = () => {
           
           <div className="text-center mt-12">
             <Button asChild size="lg" className="rounded-full px-8 text-base shadow-soft bg-abby-600 hover:bg-abby-600/90">
-              <Link to="/chat">
+              <a href="http://abby-alb-1572042320.us-east-2.elb.amazonaws.com/" target="_blank" rel="noopener noreferrer">
                 Start Now <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
+              </a>
             </Button>
           </div>
         </div>

@@ -14,11 +14,6 @@ const About = () => {
       bio: 'Nicole is a professional Data Scientist with prior experience developing and deploying chatbot tools for client use. As programming lead on the project, Nicole refined Abby\'s model to ensure a high-degree of data privacy and informational accuracy for users.',
     },
     {
-      name: 'Nadya Polovina',
-      role: 'Data Engineer',
-      bio: 'Nadya is a professional Data Engineer with a background in product infrastructure design and development. Her skillset enabled the efficient packaging and productionalization of Abby\'s platform, ensuring a functional and publicly-accessible version of the chatbot model.',
-    },
-    {
       name: 'Chloe McGlynn',
       role: 'Public Health Research Analyst',
       bio: 'Chloe is a Research Analyst with experience supporting federal adolescent pregnancy prevention initiatives and conducting statistical analyses of public health program outcomes for US citizens. Her background in health policy research, technical writing, and Machine Learning allowed her to support each step of Abby\'s design and implementation.',

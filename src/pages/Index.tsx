@@ -1,4 +1,3 @@
-
 import { ArrowRight, ShieldCheck, Heart, FileText, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
@@ -75,8 +74,14 @@ const ChatAnimation = () => {
 };
 
 const Index = () => {
-  // Properly reference base path for GitHub Pages deployment
-  const baseUrl = import.meta.env.BASE_URL;
+  const baseUrl = import.meta.env.BASE_URL || '/';
+  
+  const getAssetPath = (path: string) => {
+    const cleanPath = path.startsWith('/') ? path.substring(1) : path;
+    return `${baseUrl}${cleanPath}`;
+  };
+  
+  console.log('Index - Base URL:', baseUrl);
   
   return (
     <div className="flex flex-col w-full">
@@ -95,9 +100,13 @@ const Index = () => {
             >
               <div className="flex justify-center md:justify-start mb-6">
                 <img 
-                  src={`${baseUrl}lovable-uploads/2d537a2a-eaed-4586-97e0-9a563f78d1e8.png`} 
+                  src={getAssetPath('lovable-uploads/2d537a2a-eaed-4586-97e0-9a563f78d1e8.png')} 
                   alt="Abby Logo" 
                   className="h-24 w-auto mb-4" 
+                  onError={(e) => {
+                    console.error('Logo image failed to load:', e);
+                    e.currentTarget.style.display = 'none';
+                  }}
                 />
               </div>
               <span className="px-4 py-2 rounded-full bg-abby-100 text-abby-700 text-sm font-medium inline-block mb-6">

@@ -10,15 +10,15 @@ const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   
-  // Remove baseUrl variable that might be causing issues with image path
-  // and directly use the image path
+  // Properly reference base path for GitHub Pages deployment
+  const baseUrl = import.meta.env.BASE_URL;
 
   const routes = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
     { name: 'FAQ', path: '/faq' },
     { name: 'Privacy', path: '/privacy' },
-  ].filter(route => route.name !== 'Resources'); // Remove Resources route
+  ].filter(route => route.name !== 'Resources');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,7 +51,7 @@ const Navigation = () => {
           className="font-serif text-xl font-medium text-black flex items-center gap-2"
         >
           <img 
-            src="/lovable-uploads/2d537a2a-eaed-4586-97e0-9a563f78d1e8.png" 
+            src={`${baseUrl}lovable-uploads/2d537a2a-eaed-4586-97e0-9a563f78d1e8.png`} 
             alt="Abby Logo" 
             className="h-8 w-auto" 
           />

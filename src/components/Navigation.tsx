@@ -9,7 +9,9 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-  const baseUrl = import.meta.env.BASE_URL;
+  
+  // Remove baseUrl variable that might be causing issues with image path
+  // and directly use the image path
 
   const routes = [
     { name: 'Home', path: '/' },
@@ -49,7 +51,7 @@ const Navigation = () => {
           className="font-serif text-xl font-medium text-black flex items-center gap-2"
         >
           <img 
-            src={`${baseUrl}lovable-uploads/2d537a2a-eaed-4586-97e0-9a563f78d1e8.png`} 
+            src="/lovable-uploads/2d537a2a-eaed-4586-97e0-9a563f78d1e8.png" 
             alt="Abby Logo" 
             className="h-8 w-auto" 
           />

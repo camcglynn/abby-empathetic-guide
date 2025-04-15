@@ -74,8 +74,6 @@ const ChatAnimation = () => {
 };
 
 const Index = () => {
-  const baseUrl = import.meta.env.BASE_URL;
-  
   return (
     <div className="flex flex-col w-full">
       <section className="min-h-[90vh] flex items-center justify-center px-6 py-20 relative overflow-hidden">
@@ -93,7 +91,7 @@ const Index = () => {
             >
               <div className="flex justify-center md:justify-start mb-6">
                 <img 
-                  src={`${baseUrl}lovable-uploads/2d537a2a-eaed-4586-97e0-9a563f78d1e8.png`} 
+                  src="/lovable-uploads/2d537a2a-eaed-4586-97e0-9a563f78d1e8.png" 
                   alt="Abby Logo" 
                   className="h-24 w-auto mb-4" 
                 />

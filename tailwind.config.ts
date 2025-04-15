@@ -25,6 +25,24 @@ export default {
         display: ['Playfair Display', 'serif'],
       },
       colors: {
+        abby: {
+          50: '#F0F2EC',  // Lightest sage
+          100: '#E1E5DA', // Very light sage
+          200: '#D1D9CE', // Light sage
+          300: '#B6C2AF', // Medium-light sage
+          400: '#9CAF88', // Sage green
+          500: '#87A078', // Medium sage
+          600: '#768C61', // Medium-deep sage
+          700: '#5B6E4B', // Deep sage
+          800: '#4A593D', // Deeper sage
+          900: '#2D3524', // Darkest sage
+          950: '#222918', // Almost black sage
+          
+          // Add these direct references to make text-abby-primary work
+          primary: '#4A593D',    // Deeper sage for primary text
+          secondary: '#5B6E4B',  // Deep sage for secondary text
+          muted: '#87A078'       // Medium sage for muted text
+        },
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',

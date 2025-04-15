@@ -113,19 +113,19 @@
     @apply opacity-0 transition-opacity duration-300;
   }
 
-  // Soft focus and interaction states
+  /* Soft focus and interaction states  */
   *:focus {
     @apply outline-none ring-2 ring-abby-500/30 transition-all duration-300;
   }
 }
 
 @layer utilities {
-  // Soft card and container styles
+  /* Soft card and container styles */
   .soft-card {
     @apply bg-white/70 backdrop-blur-sm border border-abby-100/50 rounded-xl shadow-soft-light hover:shadow-soft-medium transition-soft-all;
   }
 
-  // Gentle hover effects
+  /* Gentle hover effects */
   .hover-lift {
     @apply transition-soft-all hover:-translate-y-1 hover:shadow-soft-medium;
   }

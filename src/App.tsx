@@ -9,7 +9,6 @@ import Layout from "./components/Layout";
 import DebugInfo from "./components/DebugInfo";
 import Index from "./pages/Index";
 import About from "./pages/About";
-import Chat from "./pages/Chat";
 import FAQ from "./pages/FAQ";
 import Privacy from "./pages/Privacy";
 import NotFound from "./pages/NotFound";
@@ -30,7 +29,6 @@ const App = () => {
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/about" element={<About />} />
-                <Route path="/chat" element={<Chat />} />
                 <Route path="/faq" element={<FAQ />} />
                 <Route path="/privacy" element={<Privacy />} />
                 <Route path="*" element={<NotFound />} />

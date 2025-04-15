@@ -9,7 +9,6 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-  // Get the base URL from the import.meta object to handle both development and production
   const baseUrl = import.meta.env.BASE_URL;
 
   const routes = [
@@ -17,7 +16,7 @@ const Navigation = () => {
     { name: 'About', path: '/about' },
     { name: 'FAQ', path: '/faq' },
     { name: 'Privacy', path: '/privacy' },
-  ];
+  ].filter(route => route.name !== 'Resources'); // Remove Resources route
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,7 +41,7 @@ const Navigation = () => {
         "fixed top-0 left-0 w-full z-40 transition-all duration-300 px-6 py-4 border-b",
         scrolled ? "bg-white shadow-sm" : "bg-white"
       )}
-      style={{ marginTop: '36px' }} // Add space for QuickExit
+      style={{ marginTop: '36px' }}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link 
@@ -50,7 +49,7 @@ const Navigation = () => {
           className="font-serif text-xl font-medium text-black flex items-center gap-2"
         >
           <img 
-            src={`${baseUrl}lovable-uploads/5c7322c8-233e-4943-9631-e58ba8ebc4be.png`} 
+            src={`${baseUrl}lovable-uploads/2d537a2a-eaed-4586-97e0-9a563f78d1e8.png`} 
             alt="Abby Logo" 
             className="h-8 w-auto" 
           />
@@ -95,13 +94,12 @@ const Navigation = () => {
         </Button>
       </div>
 
-      {/* Mobile menu */}
       <div
         className={cn(
           "fixed inset-0 z-50 bg-white md:hidden flex flex-col justify-center transition-all duration-300 ease-in-out",
           isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         )}
-        style={{ top: '36px' }} // Account for QuickExit
+        style={{ top: '36px' }}
       >
         <Button
           variant="ghost"

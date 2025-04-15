@@ -1,4 +1,3 @@
-
 import { ArrowRight, ShieldCheck, Heart, FileText, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
@@ -21,7 +20,6 @@ const ChatAnimation = () => {
         setMessages(prev => [...prev, demoMessages[index]]);
         setTimeout(() => addMessage(index + 1), 1500);
       } else {
-        // Reset animation after a pause
         setTimeout(() => {
           setMessages([]);
           setTimeout(() => addMessage(0), 1000);
@@ -29,11 +27,9 @@ const ChatAnimation = () => {
       }
     };
 
-    // Start the animation
     setTimeout(() => addMessage(0), 1000);
 
     return () => {
-      // Clean up all timeouts
       const highestId = window.setTimeout(() => {}, 0);
       for (let i = 0; i < highestId; i++) {
         clearTimeout(i);
@@ -78,12 +74,10 @@ const ChatAnimation = () => {
 };
 
 const Index = () => {
-  // Get the base URL from the import.meta object to handle both development and production
   const baseUrl = import.meta.env.BASE_URL;
   
   return (
     <div className="flex flex-col w-full">
-      {/* Hero Section */}
       <section className="min-h-[90vh] flex items-center justify-center px-6 py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-abby-50/50 to-white pointer-events-none"></div>
         <div className="absolute -top-40 -right-40 w-96 h-96 bg-abby-200 rounded-full opacity-20 blur-3xl"></div>
@@ -99,7 +93,7 @@ const Index = () => {
             >
               <div className="flex justify-center md:justify-start mb-6">
                 <img 
-                  src={`${baseUrl}lovable-uploads/5c7322c8-233e-4943-9631-e58ba8ebc4be.png`} 
+                  src={`${baseUrl}lovable-uploads/2d537a2a-eaed-4586-97e0-9a563f78d1e8.png`} 
                   alt="Abby Logo" 
                   className="h-24 w-auto mb-4" 
                 />
@@ -143,7 +137,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Features Section */}
       <section className="py-24 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
@@ -188,7 +181,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Support Steps Section */}
       <section className="py-24 px-6 bg-slate-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -198,7 +190,6 @@ const Index = () => {
           </div>
           
           <div className="grid md:grid-cols-3 gap-6 relative">
-            {/* Connected line for desktop */}
             <div className="hidden md:block absolute top-1/4 left-0 w-full h-0.5 bg-abby-200"></div>
             
             {[

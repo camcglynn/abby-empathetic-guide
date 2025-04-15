@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,34 +7,24 @@
   :root {
     --background: 46 7% 94%;
     --foreground: 0 0% 0%;
-
     --card: 0 0% 100%;
     --card-foreground: 222 47% 11.2%;
-
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11.2%;
-
-    --primary: 100 20% 50%;
+    --primary: 199 89% 48%;
     --primary-foreground: 210 40% 98%;
-
-    --secondary: 100 30% 90%;
+    --secondary: 199 84% 95%;
     --secondary-foreground: 222 47% 11.2%;
-
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 100 25% 85%;
+    --accent: 199 84% 94%;
     --accent-foreground: 222 47% 11.2%;
-
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 199 89% 48%;
-
     --radius: 0.8rem;
-
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -45,88 +34,89 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
-
+  
   * {
     @apply border-border;
   }
-
+  
   html {
     scroll-behavior: smooth;
   }
-
+  
   body {
     @apply bg-background text-abby-primary font-sans antialiased;
-    background-color: #F4F3F1;
-    color: #000000;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-
+  
   /* Smooth section transitions */
   section {
     @apply transition-all duration-500 ease-in-out;
   }
-
+  
   h1, h2, h3 {
     @apply text-abby-primary font-serif;
   }
-
+  
   p {
     @apply text-abby-secondary;
   }
-
+  
   /* Glass effect */
   .glass {
     @apply bg-white/70 backdrop-blur-lg border border-white/20 shadow-soft;
   }
-
+  
   .glass-dark {
     @apply bg-slate-900/70 backdrop-blur-lg border border-slate-800/30 shadow-soft;
   }
-
+  
   /* Link hover effects */
   .hover-link {
     @apply relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-abby-500 after:transition-all after:duration-300 hover:after:w-full;
   }
-
+  
   /* Card hover effect */
   .card-hover {
     @apply transition-all duration-300 hover:shadow-soft hover:-translate-y-1;
   }
-
+  
   /* Button press effect */
   .button-press {
     @apply active:scale-95 transition-all duration-200;
   }
-
+  
   /* Page transitions */
   .page-enter {
     @apply opacity-0;
   }
+  
   .page-enter-active {
     @apply opacity-100 transition-opacity duration-300;
   }
+  
   .page-exit {
     @apply opacity-100;
   }
+  
   .page-exit-active {
     @apply opacity-0 transition-opacity duration-300;
   }
-
-  /* Soft focus and interaction states  */
+  
+  /* Soft focus and interaction states */
   *:focus {
-    @apply outline-none ring-2 ring-abby-500/30 transition-all duration-300;
+    @apply outline-none ring-2 ring-abby-500 transition-all duration-300;
   }
 }
 
 @layer utilities {
   /* Soft card and container styles */
   .soft-card {
-    @apply bg-white/70 backdrop-blur-sm border border-abby-100/50 rounded-xl shadow-soft-light hover:shadow-soft-medium transition-soft-all;
+    @apply bg-white/70 backdrop-blur-sm border border-abby-100/50 rounded-xl shadow-soft-light hover:shadow-soft-medium transition-all;
   }
-
+  
   /* Gentle hover effects */
   .hover-lift {
-    @apply transition-soft-all hover:-translate-y-1 hover:shadow-soft-medium;
+    @apply transition-all hover:-translate-y-1 hover:shadow-soft-medium;
   }
 }
